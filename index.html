@@ -1,47 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+<!-- Top banner -->
+  <header>
+    <div class="logo">charity: water</div>
+    <button class="btn" onclick="openModal()">Give Water Every Month</button>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+  <!-- Bottom left content -->
+  <div class="content">
+    <div class="headline">
+      Your Help. Their Water.<br>
+      One Project at a Time.
+    </div>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+    <button class="btn" onclick="openModal()">Give Water Every Month</button>
+  </div>
+
+
+  <!-- Popup -->
+  <div class="overlay" id="overlay">
+
+    <div class="modal">
+
+      <h2>Make a Donation</h2>
+
+      <p>Choose type:</p>
+      <button onclick="setType('Monthly')">Monthly</button>
+      <button onclick="setType('One-Time')">One-Time</button>
+
+      <p style="margin-top:15px;">Choose amount:</p>
+
+      <div class="amounts">
+        <button>$20</button>
+        <button>$40</button>
+        <button>$60</button>
+        <button>$80</button>
+        <button>$100</button>
+      </div>
+
+      <br>
+      <button class="btn" onclick="closeModal()">Donate</button>
+
+    </div>
+
+  </div>
+<script>
+
+    // get popup
+    const overlay = document.getElementById("overlay");
+
+    // open popup
+    function openModal() {
+      overlay.style.display = "flex";
+    }
+
+    // close popup
+    function closeModal() {
+      overlay.style.display = "none";
+    }
+
+    // simple example (shows type in console)
+    function setType(type) {
+      console.log("Donation type:", type);
+    }
+
+  </script>
+
 </body>
+
 </html>
